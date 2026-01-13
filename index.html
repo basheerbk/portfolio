@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>basheer.diy — under construction</title>
+  <meta name="description" content="Muhammad Basheer is building something new. Maker, developer, and DIY enthusiast.">
+  <meta name="keywords" content="Muhammad Basheer, maker, DIY, IoT, robotics, developer, portfolio">
+  <meta name="author" content="Muhammad Basheer">
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">www.basheer.diy</div>
+
+    <div class="main-message">
+      <h1 class="scramble-text" id="scrambleText">building something new</h1>
+      <p class="subtitle">maker • developer • tinkerer</p>
+    </div>
+
+    <!-- Interactive Circuit -->
+    <div class="circuit-container">
+      <svg id="circuit" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Battery -->
+        <g class="battery">
+          <line x1="50" y1="80" x2="50" y2="120" stroke="#00ff88" stroke-width="3" />
+          <line x1="45" y1="90" x2="55" y2="90" stroke="#00ff88" stroke-width="2" />
+          <line x1="47" y1="110" x2="53" y2="110" stroke="#00ff88" stroke-width="2" />
+          <text x="30" y="105" fill="#808080" font-size="12" font-family="JetBrains Mono">+</text>
+        </g>
+
+        <!-- Wire from battery to switch -->
+        <path id="wire1" d="M 50 80 L 50 50 L 150 50" stroke="#00ff88" stroke-width="2" fill="none" class="wire" />
+
+        <!-- Switch -->
+        <g id="switch" class="switch" style="cursor: pointer;">
+          <circle cx="150" cy="50" r="5" fill="#00ff88" />
+          <circle cx="200" cy="50" r="5" fill="#00ff88" />
+          <line id="switchLine" x1="150" y1="50" x2="195" y2="50" stroke="#00ff88" stroke-width="2"
+            class="switch-line" />
+          <text x="165" y="35" fill="#808080" font-size="10" font-family="JetBrains Mono"
+            text-anchor="middle">CLICK</text>
+        </g>
+
+        <!-- Wire from switch to LED -->
+        <path id="wire2" d="M 200 50 L 300 50 L 300 80" stroke="#00ff88" stroke-width="2" fill="none" class="wire" />
+
+        <!-- Light Bulb -->
+        <g class="bulb">
+          <!-- Bulb glow (hidden by default) -->
+          <circle id="bulbGlow" cx="300" cy="90" r="25" fill="none" opacity="0" />
+
+          <!-- Glass bulb -->
+          <ellipse id="bulbGlass" cx="300" cy="90" rx="18" ry="22" fill="rgba(26, 26, 26, 0.3)" stroke="#00ff88"
+            stroke-width="2" />
+
+          <!-- Filament -->
+          <g id="filament">
+            <path d="M 295 85 Q 297 90 295 95" stroke="#00ff88" stroke-width="1.5" fill="none" />
+            <path d="M 305 85 Q 303 90 305 95" stroke="#00ff88" stroke-width="1.5" fill="none" />
+            <line x1="295" y1="85" x2="305" y2="85" stroke="#00ff88" stroke-width="1" />
+            <line x1="295" y1="95" x2="305" y2="95" stroke="#00ff88" stroke-width="1" />
+          </g>
+
+          <!-- Base/socket -->
+          <rect x="292" y="112" width="16" height="8" fill="#00ff88" stroke="#00ff88" stroke-width="1" />
+          <line x1="294" y1="115" x2="306" y2="115" stroke="#0a0a0a" stroke-width="1" />
+          <line x1="294" y1="117" x2="306" y2="117" stroke="#0a0a0a" stroke-width="1" />
+
+          <text x="320" y="100" fill="#808080" font-size="12" font-family="JetBrains Mono">BULB</text>
+        </g>
+        <!-- Wire from LED back to battery -->
+        <path id="wire3" d="M 300 120 L 300 150 L 50 150 L 50 120" stroke="#00ff88" stroke-width="2" fill="none"
+          class="wire" />
+
+        <!-- Current flow animation (hidden by default) -->
+        <circle id="electron1" r="3" fill="#00ff88" opacity="0">
+          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
+            <mpath href="#wire1" />
+          </animateMotion>
+        </circle>
+        <circle id="electron2" r="3" fill="#00ff88" opacity="0">
+          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
+            <mpath href="#wire2" />
+          </animateMotion>
+        </circle>
+        <circle id="electron3" r="3" fill="#00ff88" opacity="0">
+          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
+            <mpath href="#wire3" />
+          </animateMotion>
+        </circle>
+      </svg>
+      <p class="circuit-hint">Click the switch to complete the circuit</p>
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>CURRENTLY UNDER CONSTRUCTION</span>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/basheerbk" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+        <span class="social-label">GitHub</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/muhammed-basheer-107899209/" target="_blank" rel="noopener noreferrer"
+        class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+        <span class="social-label">LinkedIn</span>
+      </a>
+
+      <a href="https://www.instructables.com/member/Basheer%20bk/instructables/" target="_blank"
+        rel="noopener noreferrer" class="social-link" aria-label="Instructables">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18l8 3.6v8.72c0 4.7-3.07 9.08-8 10.32-4.93-1.24-8-5.62-8-10.32V7.78l8-3.6z" />
+        </svg>
+        <span class="social-label">Instructables</span>
+      </a>
+
+      <a href="mailto:contact@basheer.diy" class="social-link" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span class="social-label">Email</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 Muhammed Basheer • Coder & Solder
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
