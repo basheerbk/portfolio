@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>basheer.diy — under construction</title>
-  <meta name="description" content="Muhammad Basheer is building something new. Maker, developer, and DIY enthusiast.">
-  <meta name="keywords" content="Muhammad Basheer, maker, DIY, IoT, robotics, developer, portfolio">
-  <meta name="author" content="Muhammad Basheer">
+  <title>Muhammed Basheer — Maker & Developer</title>
+  <meta name="description"
+    content="Muhammed Basheer - Maker, developer, and DIY enthusiast. Building, breaking, and repeating.">
+  <meta name="keywords" content="Muhammed Basheer, maker, DIY, IoT, robotics, developer, portfolio">
+  <meta name="author" content="Muhammed Basheer">
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
@@ -17,92 +18,20 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="logo">www.basheer.diy</div>
+  <header class="header">
+    <div class="header-name">Muhammed Basheer</div>
+    <nav class="header-nav">
+      <a href="mailto:contact@basheer.diy" class="nav-link">Contact</a>
+    </nav>
+  </header>
 
-    <div class="main-message">
-      <h1 class="scramble-text" id="scrambleText">building something new</h1>
-      <p class="subtitle">maker • developer • tinkerer</p>
-    </div>
-
-    <!-- Interactive Circuit -->
-    <div class="circuit-container">
-      <svg id="circuit" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-        <!-- Battery -->
-        <g class="battery">
-          <line x1="50" y1="80" x2="50" y2="120" stroke="#00ff88" stroke-width="3" />
-          <line x1="45" y1="90" x2="55" y2="90" stroke="#00ff88" stroke-width="2" />
-          <line x1="47" y1="110" x2="53" y2="110" stroke="#00ff88" stroke-width="2" />
-          <text x="30" y="105" fill="#808080" font-size="12" font-family="JetBrains Mono">+</text>
-        </g>
-
-        <!-- Wire from battery to switch -->
-        <path id="wire1" d="M 50 80 L 50 50 L 150 50" stroke="#00ff88" stroke-width="2" fill="none" class="wire" />
-
-        <!-- Switch -->
-        <g id="switch" class="switch" style="cursor: pointer;">
-          <circle cx="150" cy="50" r="5" fill="#00ff88" />
-          <circle cx="200" cy="50" r="5" fill="#00ff88" />
-          <line id="switchLine" x1="150" y1="50" x2="195" y2="50" stroke="#00ff88" stroke-width="2"
-            class="switch-line" />
-          <text x="165" y="35" fill="#808080" font-size="10" font-family="JetBrains Mono"
-            text-anchor="middle">CLICK</text>
-        </g>
-
-        <!-- Wire from switch to LED -->
-        <path id="wire2" d="M 200 50 L 300 50 L 300 80" stroke="#00ff88" stroke-width="2" fill="none" class="wire" />
-
-        <!-- Light Bulb -->
-        <g class="bulb">
-          <!-- Bulb glow (hidden by default) -->
-          <circle id="bulbGlow" cx="300" cy="90" r="25" fill="none" opacity="0" />
-
-          <!-- Glass bulb -->
-          <ellipse id="bulbGlass" cx="300" cy="90" rx="18" ry="22" fill="rgba(26, 26, 26, 0.3)" stroke="#00ff88"
-            stroke-width="2" />
-
-          <!-- Filament -->
-          <g id="filament">
-            <path d="M 295 85 Q 297 90 295 95" stroke="#00ff88" stroke-width="1.5" fill="none" />
-            <path d="M 305 85 Q 303 90 305 95" stroke="#00ff88" stroke-width="1.5" fill="none" />
-            <line x1="295" y1="85" x2="305" y2="85" stroke="#00ff88" stroke-width="1" />
-            <line x1="295" y1="95" x2="305" y2="95" stroke="#00ff88" stroke-width="1" />
-          </g>
-
-          <!-- Base/socket -->
-          <rect x="292" y="112" width="16" height="8" fill="#00ff88" stroke="#00ff88" stroke-width="1" />
-          <line x1="294" y1="115" x2="306" y2="115" stroke="#0a0a0a" stroke-width="1" />
-          <line x1="294" y1="117" x2="306" y2="117" stroke="#0a0a0a" stroke-width="1" />
-
-          <text x="320" y="100" fill="#808080" font-size="12" font-family="JetBrains Mono">BULB</text>
-        </g>
-        <!-- Wire from LED back to battery -->
-        <path id="wire3" d="M 300 120 L 300 150 L 50 150 L 50 120" stroke="#00ff88" stroke-width="2" fill="none"
-          class="wire" />
-
-        <!-- Current flow animation (hidden by default) -->
-        <circle id="electron1" r="3" fill="#00ff88" opacity="0">
-          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
-            <mpath href="#wire1" />
-          </animateMotion>
-        </circle>
-        <circle id="electron2" r="3" fill="#00ff88" opacity="0">
-          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
-            <mpath href="#wire2" />
-          </animateMotion>
-        </circle>
-        <circle id="electron3" r="3" fill="#00ff88" opacity="0">
-          <animateMotion dur="2s" repeatCount="indefinite" begin="indefinite">
-            <mpath href="#wire3" />
-          </animateMotion>
-        </circle>
-      </svg>
-      <p class="circuit-hint">Click the switch to complete the circuit</p>
-    </div>
-
-    <div class="status">
-      <span class="status-dot"></span>
-      <span>CURRENTLY UNDER CONSTRUCTION</span>
+  <main class="container">
+    <div class="hero">
+      <h1 class="hero-title">
+        <em>build</em>, <em>break</em>,<br>
+        and <em>repeat</em>.
+      </h1>
+      <p class="hero-role">MAKER • DEVELOPER • TINKERER</p>
     </div>
 
     <div class="social-links">
@@ -141,11 +70,11 @@
         <span class="social-label">Email</span>
       </a>
     </div>
-  </div>
+  </main>
 
-  <div class="footer">
-    © 2026 Muhammed Basheer • Coder & Solder
-  </div>
+  <footer class="footer">
+    © 2026 Muhammed Basheer • basheer.diy
+  </footer>
 
   <script src="script.js"></script>
 </body>
