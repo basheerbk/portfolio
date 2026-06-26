@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
 :root {
-  --bg: #faf8f4;
-  --bg2: #f0ece5;
-  --ink: #12100e;
-  --ink2: #3d3935;
-  --ink3: #524d48;
-  --accent: #9a4218;
-  --accent-bright: #c8602a;
-  --accent-light: rgba(154, 66, 24, 0.1);
-  --rule: rgba(18, 16, 14, 0.18);
+  --bg: #ffffff;
+  --bg2: #f4f2ee;
+  --ink: #0a0908;
+  --ink2: #1f1c1a;
+  --ink3: #3a3632;
+  --accent: #8a3812;
+  --accent-bright: #a84a18;
+  --accent-light: rgba(138, 56, 18, 0.1);
+  --rule: rgba(10, 9, 8, 0.22);
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
 }
@@ -43,7 +43,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(250, 248, 244, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
@@ -346,7 +346,7 @@ nav {
   transform: scaleX(0);
   transition: transform 0.35s ease;
 }
-.project-card:hover { background: #e8e4dc; }
+.project-card:hover { background: #ebe8e2; }
 .project-card:hover::before { transform: scaleX(1); }
 
 .project-num {
@@ -422,7 +422,7 @@ nav {
   transition: background 0.2s;
   position: relative;
 }
-.journal-item:hover { background: #e8e4dc; }
+.journal-item:hover { background: #ebe8e2; }
 .journal-item--large { padding: 56px 48px; }
 .journal-item--row {
   display: grid;
@@ -508,7 +508,7 @@ nav {
 }
 .contact-method:last-of-type { margin-bottom: 0; }
 .contact-method:hover {
-  background: #e8e4dc;
+  background: #ebe8e2;
   border-color: var(--accent);
   transform: translateX(4px);
 }
@@ -582,7 +582,7 @@ nav {
 }
 .form-field input:focus,
 .form-field textarea:focus {
-  background: #e8e4dc;
+  background: #ebe8e2;
   border-bottom-color: var(--accent);
 }
 .form-field textarea { min-height: 140px; }
@@ -698,11 +698,11 @@ nav {
 @media (prefers-contrast: more) {
   :root {
     --bg: #ffffff;
-    --bg2: #f2f2f2;
+    --bg2: #eeeeee;
     --ink: #000000;
-    --ink2: #1a1815;
-    --ink3: #3d3935;
-    --accent: #7a320f;
-    --rule: rgba(0, 0, 0, 0.3);
+    --ink2: #0a0908;
+    --ink3: #1f1c1a;
+    --accent: #6b2d0c;
+    --rule: rgba(0, 0, 0, 0.35);
   }
 }

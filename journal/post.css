@@ -357,7 +357,7 @@
   color: inherit;
   transition: background 0.2s;
 }
-.post-nav-item:hover { background: #e8e4dc; }
+.post-nav-item:hover { background: #ebe8e2; }
 .post-nav-item.next { text-align: right; }
 .post-nav-dir {
   font-size: 10px;
