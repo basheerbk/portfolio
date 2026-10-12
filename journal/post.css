@@ -192,6 +192,11 @@
   overflow: hidden;
   position: relative;
 }
+.hero-image img,
+.photo-grid img,
+.photo-single img {
+  cursor: zoom-in;
+}
 .hero-image img {
   width: 100%;
   height: 420px;
@@ -483,6 +488,44 @@
 .nav-btn:hover::before {
   transform: scaleY(1);
 }
+/* ── PHOTO LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 24px;
+  background: rgba(10, 9, 8, 0.92);
+}
+.lightbox.is-open { display: flex; }
+.lightbox img {
+  max-width: min(1100px, 100%);
+  max-height: calc(100vh - 96px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 @media (max-width: 600px) {
   .nav-buttons {
     flex-direction: column;

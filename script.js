@@ -33,6 +33,65 @@ if (navToggle && navLinks) {
 
 
 
+// ── Photo lightbox ──
+const photos = document.querySelectorAll('.hero-image img, .photo-grid img, .photo-single img, .print img');
+
+if (photos.length) {
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Expanded photo');
+  box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close photo">×</button><img alt="">';
+  document.body.appendChild(box);
+
+  const full = box.querySelector('img');
+  const closeBtn = box.querySelector('.lightbox-close');
+  let lastPhoto = null;
+  let openedAt = 0;
+
+  function openPhoto(img) {
+    lastPhoto = img;
+    full.src = img.currentSrc || img.src;
+    full.alt = img.alt || '';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    openedAt = Date.now();
+    closeBtn.focus();
+  }
+
+  function closePhoto() {
+    box.classList.remove('is-open');
+    full.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastPhoto) lastPhoto.focus();
+  }
+
+  photos.forEach(img => {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.addEventListener('click', () => openPhoto(img));
+    img.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openPhoto(img);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    closePhoto();
+  });
+  box.addEventListener('click', event => {
+    if (Date.now() - openedAt < 400) return;
+    if (event.target === box) closePhoto();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && box.classList.contains('is-open')) closePhoto();
+  });
+}
+
 // ── Contact Form ──
 function handleSubmit(e) {
   e.preventDefault();
